@@ -82,7 +82,7 @@ public class FlakyElementTest {
                 "Click Me Now",
                 "Button text before click should be 'Click Me Now'"
         );
-        System.out.println("PASS — Initial button text : " + initialText);
+       //System.out.println("PASS — Initial button text : " + initialText);
 
         page.clickButton();
         page.waitForButtonToShowClicked();
@@ -93,18 +93,18 @@ public class FlakyElementTest {
                 "Clicked!",
                 "Button text after click should be 'Clicked!' but got: " + afterText
         );
-        System.out.println("PASS — Button text after click: " + afterText);
+        //System.out.println("PASS — Button text after click: " + afterText);
     }
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
-            System.out.println("Browser closed.");
+            //System.out.println("Browser closed.");
         }
 
         if (tempHtmlFile != null && tempHtmlFile.exists()) {
             boolean deleted = tempHtmlFile.delete();
-            System.out.println(deleted ? "Temp file deleted." : "Could not delete temp file.");
+            //System.out.println(deleted ? "Temp file deleted." : "Could not delete temp file.");
         }
     }
 }
